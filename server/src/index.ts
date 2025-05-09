@@ -6,11 +6,11 @@ import mongoose from "mongoose";
 import { WilderResolver } from "./resolvers/wilder.resolver";
 
 if (!process.env.SERVER_PORT) {
-  throw new Error("The env variable SERVER_PORT must be defined")
+  throw new Error("The env variable SERVER_PORT must be defined");
 }
 
 (async () => {
-  await mongoose.connect("mongodb://mongodb:27017/wilders", {useUnifiedTopology: true, useNewUrlParser: true});
+  await mongoose.connect("mongodb://mongodb:27017/wilders");
   const schema = await buildSchema({
     resolvers: [WilderResolver],
   });

@@ -1,4 +1,4 @@
-FROM node:14.17.3-alpine
+FROM node:alpine-latest
 
 RUN mkdir /app
 WORKDIR /app
@@ -11,4 +11,4 @@ COPY tsconfig.json ./
 COPY public public
 COPY src src
 
-CMD npm start
+CMD ["npm", "run", "start"]
